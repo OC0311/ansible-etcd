@@ -8,7 +8,8 @@
 
 注：暂只支持CentOS一键部署
 
-#使用方法
+# 使用方法
+
 1、编写集群部署配置文件（yml格式），放置在ansible-etcd 的cfg文件夹下
 
 ```
@@ -30,4 +31,6 @@ nodes:
 ./start.sh -c config.yml
 
 ```
+
+注：所有的操作都会在一个复制文件夹（workspace）下进行
 
