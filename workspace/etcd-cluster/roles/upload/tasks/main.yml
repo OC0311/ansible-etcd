@@ -5,7 +5,7 @@
 
 - name: upload config file
   copy:
-    src: "{{ node_name }}_config.yml"
+    src: "{{ node_name }}.yml"
     dest: "{{ topdir }}/config/etcd_config.yml"
     mode: u=rwx
 

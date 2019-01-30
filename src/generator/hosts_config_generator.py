@@ -10,7 +10,7 @@ from src.logger import logger
 
 HOSTSTEMPLATE = """[etcd]
 {%- for node in nodes %}
-{{ node.host }} node_name={{ node.name }}_config
+{{ node.host }} node_name={{ node.name }}
 {%- endfor %}
 """
 
