@@ -1,0 +1,5 @@
+cluster: "etcd-clusterv212"
+cluster_token: "v1"
+nodes:
+  - host: 116.62.118.133
+    name: etcd-0

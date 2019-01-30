@@ -1,0 +1,9 @@
+- hosts: etcd
+  roles:
+    - prepare
+- hosts: etcd
+  roles:
+    - upload
+- hosts: etcd
+  roles:
+    - deploy

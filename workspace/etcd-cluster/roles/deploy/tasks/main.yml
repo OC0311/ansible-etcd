@@ -1,0 +1,2 @@
+- name: start etcd
+  command: "{{ topdir }}/start_etcd.sh"

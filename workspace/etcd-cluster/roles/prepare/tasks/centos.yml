@@ -1,0 +1,10 @@
+- name: docker daemon config
+  notify: restart docker
+  copy:
+    src: docker_daemon.json
+    dest: /etc/docker/daemon.json
+
+- name: start docker
+  systemd:
+      state: started
+      name: docker

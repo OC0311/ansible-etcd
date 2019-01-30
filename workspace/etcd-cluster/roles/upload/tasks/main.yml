@@ -1,0 +1,17 @@
+- name: make config dir
+  file:
+    path: "{{ topdir }}/config"
+    state: directory
+
+- name: upload config file
+  copy:
+    src: "{{ node_name }}_config.yml"
+    dest: "{{ topdir }}/config/etcd_config.yml"
+    mode: u=rwx
+
+- name: upload srcipt file
+  template:
+    src: "start_etcd.j2"
+    dest: "{{ topdir }}/start_etcd.sh"
+    mode: u=rwx
+
