@@ -2,9 +2,9 @@
 利用ansible搭建etcd集群网络
 # 准备工作
 
-- 确保已经安装docker环境
+- 确保已经安装Docker环境
 - 确保已经安装好Python开发环境
-- 确保已经安装好ansible环境
+- 确保已经安装好Ansible环境
 
 注：暂只支持CentOS一键部署
 
