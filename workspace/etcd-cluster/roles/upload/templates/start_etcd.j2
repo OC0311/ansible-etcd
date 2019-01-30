@@ -20,18 +20,21 @@ function err() {
 }
 
 function stop(){
-    docker container stats etcd
+    COUNT=$(ps -ef |grep "etcd" |grep -v "grep" |wc -l)
+    # 判断etcd 容器是否运行
+    if [ $COUNT -gt 0 ]; then
+        docker stop etcd
+        # 删除容器
+        docker rm etcd
+    fi
 
-    docker stop etcd
-    # 删除容器
-    docker rm etcd
 }
 
 function start(){
-    docker run  -d -p 2380:2380 -p 2379:2379 -p 4001:4001 \
-    --name etcd -v {{ topdir }}:/etcd {{ docker_image }} \
-    {{ container_name }} -config-file="{{ topdir }}/config/etcd_config.yml"
+    docker run  -d -p 2380:2380 -p 2379:2379 -p 2381:2381 \
+    --name etcd -v {{ topdir }}/config:/etcd/config {{ docker_image }} \
+    {{ container_name }} -config-file="/etcd/config/etcd_config.yml"
 }
 
-#stop
+stop
 start

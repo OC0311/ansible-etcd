@@ -81,3 +81,15 @@ function runWithConfig(){
 }
 
 
+#ps -ef |grep zookeeper 这个就是看zookeeper的启动情况
+#grep -v "grep" 是为了去掉查询 grep的那一条
+#wc -l 是计数的
+COUNT=$(ps -ef |grep zokeeper |grep -v "grep" |wc -l)
+echo $COUNT
+if [ $COUNT -eq 0 ]; then
+        echo NOT RUN
+else
+        echo is RUN
+fi
+
+

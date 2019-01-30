@@ -1,0 +1,8 @@
+name: etcd-0
+advertise-client-urls: http://116.62.118.133:2379,http://127.0.0.1:2381
+listen-client-urls: http://0.0.0.0:2379,http://127.0.0.1:2381
+initial-advertise-peer-urls: http://116.62.118.133:2380
+listen-peer-urls: http://0.0.0.0:2380
+initial-cluster-token: token
+initial-cluster: etcd-0=http://116.62.118.133:2380,etcd-1=http://47.96.230.107:2380
+initial-cluster-state: new
