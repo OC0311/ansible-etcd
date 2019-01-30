@@ -14,7 +14,7 @@ if __name__ == '__main__':
     sys.setdefaultencoding('utf-8')
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', required=True, help='区块链配置文件，请使用绝对路径')
+    parser.add_argument('--config', required=True, help='配置文件，请使用绝对路径')
 
     args = parser.parse_args()
 
