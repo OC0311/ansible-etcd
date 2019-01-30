@@ -20,9 +20,10 @@ function err() {
 }
 
 function stop(){
-    COUNT=$(ps -ef |grep "etcd" |grep -v "grep" |wc -l)
+    COUNT=$(docker ps |grep "etcd" |grep -v "grep" |wc -l)
     # 判断etcd 容器是否运行
     if [ $COUNT -gt 0 ]; then
+        log "etcd容器正在运行，将会被删除！"
         docker stop etcd
         # 删除容器
         docker rm etcd
